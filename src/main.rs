@@ -1,22 +1,24 @@
 fn main() {
-    println!("Introduce tu edad: ");
-    let mut age: String = String::new();
+    // dos números
+    let num_1 = 120;
+    let num_2 = 321;
 
-    // Tomar edad
-    std::io::stdin().read_line(&mut age).unwrap();
+    let sum = num_1 + num_2;
 
-    // Transformar Edad
-    let age_int: u8 = age.trim().parse().unwrap();
+    loop {
+        println!("Escribe la sume de {} y {}", num_1, num_2);
 
-    if age_int >= 18 {
-        println!("Puedes entrar a la discoteca");
-    } else {
-        println!("No puedes entrar a la discoteca")
+        let mut sum_user = String::new();
+
+        std::io::stdin().read_line(&mut sum_user).unwrap();
+
+        let sum_user_int: i32 = sum_user.trim().parse().unwrap();
+
+        if sum_user_int == sum {
+            println!("La suma es correcta.");
+            break;
+        } else {
+            println!("La suma es errada");
+        }
     }
-
-    let mut i: u32 = 30;
-
-    i += 1;
-
-    println!("I es: {}", i)
 }
